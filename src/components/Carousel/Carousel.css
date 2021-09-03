@@ -1,0 +1,13 @@
+.container_carousel{
+    margin: 15px 0 15px 0;
+}
+.carousel_img{
+    width: 100% !important;
+    height: 300px !important;
+    
+    background-attachment: fixed;
+    background-size: cover;
+}
+.carousel-control-prev{
+    color: #742655 !important;
+}
