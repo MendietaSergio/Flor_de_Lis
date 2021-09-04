@@ -29,7 +29,7 @@ export const Header = () => {
                                 <Link to="/" onClick={closeNav}>Inicio</Link>
                                 <Link to="/productos" >Productos</Link>
                                 <Link to="/contacto" onClick={closeNav}>Contacto</Link>
-                                <Search className="buscador_header"/>
+                                <Search className="buscador_header" to="/productos"/>
                             </>
                         </nav>
                     </div>

@@ -1,6 +1,7 @@
+import React from 'react'
 import './Title.css'
 
-export const Title = ({ text = "" }) => {
+const Title = ({ text = "" }) => {
     return (
         <>
             <div className="row">
@@ -13,3 +14,5 @@ export const Title = ({ text = "" }) => {
         </>
     )
 }
+
+export default Title;
