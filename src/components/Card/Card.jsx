@@ -20,11 +20,9 @@ const Card = ({ product }) => {
         <p className="card-text">Subcategoria: {product.subCategory}</p>
         <p className="card-text">Descripción: {product.descrition}</p>
         <div className="d-flex justify-content-between">
-          <Button
-            className="btn btn-success"
-            to="https://web.whatsapp.com.ar"
-            text="Consultar"
-          ></Button>
+          <a className="btn btn-success"
+            text="Consultar" rel="noopener noreferrer"
+            target="_blank" href={`https://api.whatsapp.com/send?phone=+5492214092724&text=Hola%20Adri%20!%20Quiero%20saber%20sobre%20este%20producto%20${product.name}.`}>Whatssap</a>
         </div>
       </div>
     </div>

@@ -22,7 +22,9 @@ button.btn-menu i{
     height: 60px;
 }
 
-
+.titulo_logo{
+    font-size: 15px;
+}
 .menu{
     position: fixed;
     left: 0;
@@ -59,6 +61,7 @@ button.btn-menu i{
 .buscador_header{
     display: none !important;
 }
+
 @media screen and (min-width: 768px){
     .buscador_top{
         display: none !important;

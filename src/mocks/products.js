@@ -6,7 +6,10 @@ const products = [
         discount:"descuento_01",
         category:"categoria_01",
         subCategory:"subcategoria_01",
-        img:"img_productos_01.jpg"
+        img:"img_productos_01.jpg",
+        price: 0,
+        offer: 0,
+        offerSection: true
     },
     {
         id:2,
@@ -15,7 +18,10 @@ const products = [
         discount:"descuento_02",
         category:"categoria_02",
         subCategory:"subcategoria_02",
-        img:"img_productos_01.jpg"
+        img:"img_productos_01.jpg",
+        price: 0,
+        offer: 0,
+        offerSection: false
     },
     {
         id:3,
@@ -24,7 +30,10 @@ const products = [
         discount:"descuento_03",
         category:"categoria_03",
         subCategory:"subcategoria_03",
-        img:"img_productos_01.jpg"
+        img:"img_productos_01.jpg",
+        price: 0,
+        offer: 0,
+        offerSection: true
     },
     {
         id:4,
@@ -33,7 +42,10 @@ const products = [
         discount:"descuento_04",
         category:"categoria_04",
         subCategory:"subcategoria_04",
-        img:"img_productos_01.jpg"
+        img:"img_productos_01.jpg",
+        price: 0,
+        offer: 0,
+        offerSection: false
     },
     {
         id:5,
@@ -42,7 +54,10 @@ const products = [
         discount:"descuento_05",
         category:"categoria_05",
         subCategory:"subcategoria_05",
-        img:"img_productos_01.jpg"
+        img:"img_productos_01.jpg",
+        price: 0,
+        offer: 0,
+        offerSection: true
     },
 ]
 

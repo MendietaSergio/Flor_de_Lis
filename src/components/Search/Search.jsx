@@ -1,3 +1,5 @@
+import "./Search.css"
+
 import React from "react";
 const Search = ({className=""}) => {
     return (
@@ -7,7 +9,7 @@ const Search = ({className=""}) => {
                     <div className="input-group ">
                         <input className="form-control" type="search" placeholder="Buscar..." />
                         <div className="input-group-append">
-                            <button type="submit" className="btn btn-secondary"><i className="fas fa-search"></i></button>
+                            <button type="submit" className="btn"><i className="fas fa-search"></i></button>
                         </div>
                     </div>
                 </form>

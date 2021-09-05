@@ -1,4 +1,6 @@
-.card_produts{
-    width: 250px !important;
-    height: 500px !important;
+.card-img-top{
+    width: 80% !important;
+}
+.card-body{
+    width: 80% !important;
 }
