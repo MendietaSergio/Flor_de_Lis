@@ -60,5 +60,11 @@ const products = [
         offerSection: true
     },
 ]
-
-export default products;
+const getFetch = new Promise((res)=>{
+    //aca tareas asincronicas
+   
+        setTimeout(()=>{
+            res(products)
+        }, 2000)    
+})
+export default getFetch;

@@ -1,13 +1,8 @@
 import React from "react";
-import Button from "../Button/Button";
-import Producto_01 from "../../images/Products/img_productos_01.jpg"
+import Producto_01 from "../../../images/Products/img_productos_01.jpg"
 import "./Card.css";
 const Card = ({ product }) => {
-  const pruebaCard = () => {
-    console.log("Prueba desde Card: ");
-    // console.log(product);
-  };
-  pruebaCard();
+ 
   return (
     <div className="col-6 col-md-4 col-lg-4 mb-1 h-100 my-4">
         <img
