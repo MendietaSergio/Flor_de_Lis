@@ -61,7 +61,26 @@ button.btn-menu i{
 .buscador_header{
     display: none !important;
 }
+.menu a:hover{
+    color:silver;
+}
 
+.nav-link{
+    padding: 10px 0 !important;
+}
+
+.divmenu2>.nav-item>.dropdown-menu.show {
+    position: absolute !important;
+    left: 144px !important;
+    top:-38px !important;
+}
+.divmenu2>.title-link>.dropdown-menu.show{
+    display: none !important;
+}
+.title-link{
+    padding: 15px !important;
+    margin: 0 !important;
+}
 @media screen and (min-width: 768px){
     .buscador_top{
         display: none !important;
