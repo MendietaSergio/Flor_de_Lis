@@ -1,12 +1,13 @@
 import React,{useEffect, useState} from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import getFetch from "../../../mocks/products";
 import ItemList from "../ItemList/ItemList";
 import Title from "../../Title/Title";
-export const ItemListContainer = ( ) =>{
+export const ItemListContainer = ({title}) =>{
 
     const [ products, setProducts ] = useState([])
     const [ loading, setLoading ] = useState(true)
+    const [ titleProduct, setTitleProduct ] = useState(title)
     const {idCategory} = useParams();
     const {idSubCategory} = useParams()
     useEffect(() => {
@@ -14,21 +15,29 @@ export const ItemListContainer = ( ) =>{
             if(idCategory){
                 await getFetch
                     .then(respuesta =>{
-                        setProducts(respuesta.filter(idCategory => idCategory.category === idCategory))
+                        setProducts(respuesta.filter(idCategorie => idCategorie.category === idCategory))
                         setLoading(false);
+                        setTitleProduct(idCategory);
                     })
                     .catch(error => console.log(error))
-                    .finally(setLoading(false))
+                    .finally(()=>{
+                        setLoading(false)
+
+                    })
                 if(idSubCategory){
                         await getFetch
                         .then(respuesta =>{
                             setProducts(respuesta.filter(idsubcategory =>idsubcategory.subCategory === idSubCategory))
-                            setLoading(false)  
+                            setLoading(false)
+                            setTitleProduct(idSubCategory)
+
                         })
                         .catch(error=>{
                             console.log(error);
                         })
-                        .finally(() =>setLoading(false))
+                        .finally(() =>{
+                            setLoading(false)
+                        })
                 }
             
             } else {
@@ -40,7 +49,7 @@ export const ItemListContainer = ( ) =>{
                 .catch(error=>{
                     console.log(error);
                 })
-                .finally(() =>setLoading(false)) 
+                .finally(() =>setLoading(false))
             }
         }
         fetProducts()
@@ -48,16 +57,18 @@ export const ItemListContainer = ( ) =>{
 
     return (
         <>
-          <Title text="Destacado" />
+          
+          {loading ? 
+            (
+            <h1>Cargando...<i className="fas fa-spinner fa-pulse" ></i></h1> 
+        ):(
+            <>
+            <Title text={titleProduct} />
             <div className="container">
-                {loading ? 
-                <i className="fas fa-spinner fa-pulse" /> 
-                : (
-                    <ItemList products={products}/>
-                )}
-
+                <ItemList products={products}/>
             </div>
-
+            </>
+        )}
         </>
 
     )

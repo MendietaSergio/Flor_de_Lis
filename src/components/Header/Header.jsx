@@ -20,7 +20,6 @@ export const Header = () => {
       await getFetchCategories
         .then((res) => {
           setListCategory(res);
-          console.log("Categorias ", listCategory);
         })
         .catch((error) => console.log(error));
     };
@@ -28,14 +27,11 @@ export const Header = () => {
       await getFetchSubCategories
         .then((res) => {
           setSubListCategory(res);
-          console.log("res =>", res);
-          console.log("SubCategorias ", subListCategory);
         })
         .catch((error) => console.log(error));
     };
     getFetchCategory();
     getFetchSubCategory();
-    console.log("SubCategorias ", subListCategory);
   }, []);
   return (
     <>
@@ -63,7 +59,7 @@ export const Header = () => {
               </Link>
               <NavDropdown title="Productos" id="basic-nav-dropdown">
                 {listCategory.map((category) => (
-                  <>
+                  
                     <div key={category.id} className="divmenu2">
                       {category.subCategory ?
                       (
@@ -92,7 +88,7 @@ export const Header = () => {
                       
                        
                     </div>
-                  </>
+                  
                 ))}
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/productos">Ver más</NavDropdown.Item>

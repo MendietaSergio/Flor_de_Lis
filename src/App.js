@@ -17,6 +17,12 @@ function App() {
           <Home/>
         </Route>
         <Route path="/Productos" exact>
+          <Products title="Productos"/>
+        </Route>
+        <Route path="/Productos/:idCategory" exact>
+          <Products title="Productos"/>
+        </Route>
+        <Route path="/Productos/:idCategory/:idSubCategory" exact>
           <Products/>
         </Route>
         <Route path="/Contacto" exact>
