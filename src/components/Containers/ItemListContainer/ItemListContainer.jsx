@@ -59,8 +59,9 @@ export const ItemListContainer = ({title}) =>{
         <>
           
           {loading ? 
-            (
-            <h1>Cargando...<i className="fas fa-spinner fa-pulse" ></i></h1> 
+            (<div className="text-center">
+                <h1>Cargando....<i className="fas fa-spinner fa-pulse " ></i></h1>
+            </div>
         ):(
             <>
             <Title text={titleProduct} />

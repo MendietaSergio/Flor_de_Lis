@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Header } from "./components/Header/Header";
+import { Signin } from "./pages/Signin";
 import Home from "./pages/Home";
 import Products from "./pages/Products"
 import Contact from "./pages/Contact"
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/Productos/:idCategory/:idSubCategory" exact>
           <Products/>
+        </Route>
+        <Route path="/Login" exact>
+          <Signin/>
         </Route>
         <Route path="/Contacto" exact>
           <Contact/>
