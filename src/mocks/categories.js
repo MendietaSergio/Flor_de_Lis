@@ -6,7 +6,7 @@ const categories = [
     },
     {
         id:2,
-        title:"Cartas aromas",
+        title:"Cartas de aromas",
         subCategory: false
     },
     {

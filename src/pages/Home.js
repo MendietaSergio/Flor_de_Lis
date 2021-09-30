@@ -6,21 +6,19 @@ import { ItemListContainer } from "../components/Containers/ItemListContainer/It
 import Offer from "../components/Containers/Offer/Offer";
 
 const Home = () => {
-  // const [refresh, setRefresh ] = useState(true);
-  
+   
   
   return (
     <>
       <Carousel />
       <section className="row">
-        <ItemListContainer /> 
+        <ItemListContainer title="Productos"/> 
       </section>
       <section className="row my-5">
         <Offer/>
       </section>
       <section className="row">
         <SocialNetworks/>
-
       </section>
       <Footer/>
     </>
