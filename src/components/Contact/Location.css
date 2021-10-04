@@ -1,0 +1,22 @@
+.list-location{
+    list-style:none;
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 8px 0;
+    text-decoration: none;
+}
+.list-location-text{
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.fas{
+    padding-right: 5px;
+}
+.list-location>img{
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+}
