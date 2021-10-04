@@ -1,7 +1,13 @@
+import Title from "../components/Title/Title";
+import Location from "../components/Contact/Location";
+
 const Contact =() =>{
     return (
         <>
-        <h1>Contacto</h1>
+            <div className="my-5">
+                <Title text="Formas de contacto"/>
+                <Location/>
+            </div>
         </>
     )
 }
