@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import Logo from "../../images/Logo_Flor_de_lis.png";
 import Logo from "../../images/Logo.png";
-import getFetch from "../../mocks/products";
-import getFetchCategories from "../../mocks/categories";
+import { getFirestore } from "../../services/getFirebase";
 import Search from "../Search/Search";
 import { NavDropdown } from "react-bootstrap";
 import "./Header.css";
-import getFetchSubCategories from "../../mocks/subCategories";
+
 export const Header = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
@@ -15,24 +13,26 @@ export const Header = () => {
   const [listCategory, setListCategory] = useState([]);
   const [subListCategory, setSubListCategory] = useState([]);
 
-  useEffect(() => {
-    const getFetchCategory = async () => {
-      await getFetchCategories
-        .then((res) => {
-          setListCategory(res);
+  const dbQuery = getFirestore()
+    useEffect(()=>{    
+        getCategory()
+        getSubCategory()
+        
+    },[])
+    const getCategory = async () =>{
+    await dbQuery.collection('category').get()
+    .then(resp=>{
+        setListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
+    })
+    .catch(error => console.log(error))
+    }
+    
+    const getSubCategory = async () =>{
+    await dbQuery.collection('subCategory').get()
+        .then(resp=>{
+            setSubListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
         })
-        .catch((error) => console.log(error));
-    };
-    const getFetchSubCategory = async () => {
-      await getFetchSubCategories
-        .then((res) => {
-          setSubListCategory(res);
-        })
-        .catch((error) => console.log(error));
-    };
-    getFetchCategory();
-    getFetchSubCategory();
-  }, []);
+    }
   return (
     <>
       <div className="container shadow">
@@ -64,25 +64,25 @@ export const Header = () => {
                       {category.subCategory ?
                       (
                         <NavDropdown
-                            title={category.title}
+                            title={category.name}
                             className={category.subCategory ? "title-menu":"title-link"}
                             id="basic-nav-dropdown"
                         >
-                          {subListCategory.filter(subCategory=> subCategory.id_category == category.id).map(subCategory =>
+                          {subListCategory.filter(subCategory=> subCategory.name_category == category.name).map(subCategory =>
                                           <div key={subCategory.id}>
-                                              <NavDropdown.Item   href={`/productos/${category.title}/${subCategory.title}`}>{subCategory.title}</NavDropdown.Item>
+                                              <NavDropdown.Item   href={`/productos/${category.name}/${subCategory.name}`}>{subCategory.name}</NavDropdown.Item>
                                           </div>
                                       )}
                               <NavDropdown.Divider />
-                              <NavDropdown.Item href={`/productos/${category.title}`}>Ver más</NavDropdown.Item>
+                              <NavDropdown.Item href={`/productos/${category.name}`}>Ver más</NavDropdown.Item>
                         </NavDropdown>
                       ):(
                         <NavDropdown.Item 
-                          title={category.title} 
+                          title={category.name} 
                           className={category.subCategory ? "title-menu":"title-link"}
-                          href={`/productos/${category.title}`}
+                          href={`/productos/${category.name}`}
                           >
-                            {category.title}
+                            {category.name}
                           </NavDropdown.Item>
                       )}
                       
