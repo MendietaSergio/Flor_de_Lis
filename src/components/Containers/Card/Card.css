@@ -1,6 +1,10 @@
 .card-img-top{
-    width: 80% !important;
+    width: 100% !important;
 }
 .card-body{
-    width: 80% !important;
+    width: 100% !important;
+}
+.card{
+    width: 18rem !important;
+    margin: 0 auto;
 }
