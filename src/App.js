@@ -6,13 +6,15 @@ import Home from "./pages/Home";
 import Products from "./pages/Products"
 import Contact from "./pages/Contact"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from "./components/Footer/Footer";
+import Detail from "./pages/Detail";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Header/>
-      <div className="container">
+      <div className="container container-body">
       <Switch>
         <Route path="/" exact>
           <Home/>
@@ -26,6 +28,9 @@ function App() {
         <Route path="/Productos/:idCategory/:idSubCategory" exact>
           <Products/>
         </Route>
+        <Route path="/detalle/:idProduct" exact>
+          <Detail />
+        </Route>
         <Route path="/Login" exact>
           <Signin/>
         </Route>
@@ -34,6 +39,7 @@ function App() {
         </Route>
       </Switch>
       </div>
+      <Footer/>
     </BrowserRouter>
 
   );
