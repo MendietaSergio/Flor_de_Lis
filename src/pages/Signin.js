@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-
+import Footer from "../components/Footer/Footer";
 /* Componentes */
 import {Register} from '../components/Register/Register';
 import {Login} from '../components/Login/Login';
@@ -39,6 +38,7 @@ export const Signin = () =>{
       </div>
       {login ? <Login /> : <Register />}
             </div>
+            <Footer/>
         </>
     )
 }
