@@ -1,9 +1,8 @@
 import React from "react";
 import Carousel from "../components/Carousel/Carousel";
 import SocialNetworks from "../components/SocialNetworks/SocialNetworks";
-import Footer from "../components/Footer/Footer";
-import { ItemListContainer } from "../components/Containers/ItemListContainer/ItemListContainer";
-import Offer from "../components/Containers/Offer/Offer";
+import Button from "../components/Button/Button"
+import Slider from "../components/Slider/Slider";
 
 const Home = () => {
    
@@ -12,15 +11,18 @@ const Home = () => {
     <>
       <Carousel />
       <section className="row">
-        <ItemListContainer title="Productos"/> 
+      <Slider title="Destacados" to="/productos" productOffer={true}/>
+      <div className="d-flex justify-content-center my-5">
+        <Button to="/productos" text="Ver más"/>
+      </div>
+        
       </section>
       <section className="row my-5">
-        <Offer/>
+        <Slider title="Ofertas" productOffer={true}/>
       </section>
       <section className="row">
         <SocialNetworks/>
       </section>
-      <Footer/>
     </>
   );
 };
