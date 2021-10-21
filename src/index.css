@@ -11,7 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/* CONTENEDORES */
+.container-body{
+  min-height: 100vh;
+}
+.container-body-pages{
+  height: 600px;
+}
+.detail-loading{
+  height: 800px;
+}
+.container-body-detail{
+  height: auto;
+}
 /* RUTAS */
 .routes{
   margin: 20px;
