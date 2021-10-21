@@ -1,5 +1,7 @@
 import { ItemListContainer } from "../components/Containers/ItemListContainer/ItemListContainer";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
+import SocialNetworks from "../components/SocialNetworks/SocialNetworks";
+import Footer from "../components/Footer/Footer";
 
 const Products = ({title}) =>{
     const {idCategory} = useParams()
@@ -23,6 +25,10 @@ const Products = ({title}) =>{
                 </span>
             </div>
             <ItemListContainer title={title}/>
+            <section className="row">
+                <SocialNetworks/>
+            </section>
+                <Footer/>
         </>
     )
 }
